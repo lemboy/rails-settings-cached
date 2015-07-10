@@ -12,10 +12,10 @@ module RailsSettings
     
     def self.[](var_name)
       cache_key = "settings:#{var_name}"
-      obj = Rails.cache.read(cache_key)
-      if obj == nil
+      #obj = Rails.cache.read(cache_key)
+      #if obj == nil
         obj = super(var_name)
-      end
+      #end
       
       return @@defaults[var_name.to_s] if obj == nil
       obj
